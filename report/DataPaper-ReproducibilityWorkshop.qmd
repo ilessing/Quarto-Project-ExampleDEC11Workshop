@@ -17,7 +17,7 @@ A sample of 144 participants underwent the Trier Social Stress Test (TSST), a ps
 
 **1. Value of the Data** (**Example 3**)
 
-(**Example 4**)
+[@nitsch2020]
 
 The data are useful, as both the analysis of salivary cortisol for a relatively large sample as well as the implementation of an incentive-compatible behavioral task are expensive. Further, data sharing in the field of choice consistency/rationality is still relatively uncommon, making the aggregation of evidence challenging [@nitsch2020b].
 
@@ -53,7 +53,16 @@ This [OSF](https://osf.io/6mvq7/) directory contains the raw and processed data 
 
 To repeat the analyses of the *related research article*, follow the instructions in the README file.
 
-The CSV file contains choice consistency data for (n? **Example 7A**) simulated participants that have been used to determine the power of our food-choice task design to detect choice consistency violations, which averaged (**Example 7B**). Simulated participants solved one measurement (11 trials) of the food-choice task. Simulated choices were uniform-random among the choice sets. Data contains the critical cost efficiency index based on the parameters defined by @nitsch2020a and @afriat1972.
+```{r}
+# load libraries
+library(tidyverse)
+library(BayesFactor)
+
+# load data
+df <- read_csv("data/processed/preprocessed-GARP-TSST-data.csv")
+```
+
+The CSV file contains choice consistency data for FIXME simulated participants that have been used to determine the power of our food-choice task design to detect choice consistency violations, which averaged `r mean(bronars_simulation_data$violation_count)`. Simulated participants solved one measurement (11 trials) of the food-choice task. Simulated choices were uniform-random among the choice sets. Data contains the critical cost efficiency index based on the parameters defined by @nitsch2020a and @afriat1972.
 
 \
 
@@ -141,7 +150,7 @@ ggsave("../output/heartrate.pdf", plot, width = 4, height = 3)
 
 (**Example 9**) add Fig 4: Cortisol and Amylase Levels in Stress and Control Groups
 
-All analyses were conducted in R in the RStudio IDE, using the packages Tidyverse (**add citation here**), string (**add citation here**), BayesFactor and patchwork.
+All analyses were conducted in R in the RStudio IDE, using the packages Tidyverse ([@wickham2019]), string (**add citation here**), BayesFactor and patchwork.
 
 ## Ethics Statement
 
