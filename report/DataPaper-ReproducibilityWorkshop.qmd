@@ -3,6 +3,7 @@ title: "Data Article: Trier social stress test and food-choice: Behavioral, self
 author: "Felix Jan Nitsch; Manuela Sellitto; Tobias Kalenscher"
 format: html
 bibliography: references.bib
+csl: apa.csl
 ---
 
 Citation to original version of this data article:
@@ -26,6 +27,16 @@ The data is valuable to researchers interested in the interplay of physiological
 ## **2. Data Description**
 
 This [OSF](https://osf.io/6mvq7/) directory contains the raw and processed data described, as well as analysis scripts required to computationally reproduce the results and plots reported in the *related research article*. The structure of the directory is:
+
+```{r}
+# load libraries 
+library(tidyverse) 
+library(BayesFactor)
+
+# load data
+
+df <- read_csv("data/processed/preprocessed-GARP-TSST-data.csv") 
+```
 
 ### Analysis
 
@@ -52,15 +63,6 @@ This [OSF](https://osf.io/6mvq7/) directory contains the raw and processed data 
         -   output (contains rendered html publication)
 
 To repeat the analyses of the *related research article*, follow the instructions in the README file.
-
-```{r}
-# load libraries
-library(tidyverse)
-library(BayesFactor)
-
-# load data
-df <- read_csv("data/processed/preprocessed-GARP-TSST-data.csv")
-```
 
 The CSV file contains choice consistency data for FIXME simulated participants that have been used to determine the power of our food-choice task design to detect choice consistency violations, which averaged `r mean(bronars_simulation_data$violation_count)`. Simulated participants solved one measurement (11 trials) of the food-choice task. Simulated choices were uniform-random among the choice sets. Data contains the critical cost efficiency index based on the parameters defined by @nitsch2020a and @afriat1972.
 
@@ -98,7 +100,7 @@ library(tidyverse)
 library(BayesFactor)
 
 #Read data
-df <- read_csv("../data/processed/preprocessed-GARP-TSST-data.csv")
+df <- read_csv("data/processed/preprocessed-GARP-TSST-data.csv")
 
 #Convert df to long-format
 df_long <- df %>%
