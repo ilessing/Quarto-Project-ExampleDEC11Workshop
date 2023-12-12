@@ -1071,6 +1071,18 @@
       ],
       "Hash": "14dc9f7a3c91ebb14ec5bb9208a07061"
     },
+    "protViz": {
+      "Package": "protViz",
+      "Version": "0.7.7",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "R",
+        "Rcpp",
+        "methods"
+      ],
+      "Hash": "c3d49dcaa7946a3351c334d7291d2082"
+    },
     "ps": {
       "Package": "ps",
       "Version": "1.7.1",
